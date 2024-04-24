@@ -38,14 +38,24 @@ postal.send({
   });
 ```
 
-You can also use an **html body** just with the *isHtml* label:
+You can also use an **html body** just with the `isHtml` flag:
 
 ```typescript
 postal.send({
     ...
     body: "<h1>This is an awesome title</h1><p>Followed by a paragraph</p>",
-    isHtml: true,
-  })
+    isHtml: true
+  });
+```
+
+You can also send emails with both **plaintext and HTML bodies**:
+
+```typescript
+postal.send({
+    ...
+    plainBody: "Hey, listen! This email is important so listen up ...",
+    htmlBody: "<h1>Hey, listen!</h1><p>This email is important so listen up ...</p>"
+  });
 ```
 
 Do you have **multiple recipients**? Just use an array:
