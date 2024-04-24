@@ -19,9 +19,8 @@ export class MessageToSend {
       sender: message.sender,
       reply_to: message.replyTo,
       subject: message.subject,
-      ...(message.isHtml
-        ? { html_body: message.body }
-        : { plain_body: message.body }),
+      html_body: message.htmlBody ?? (message.isHtml ? message.body : undefined),
+      plain_body: message.plainBody ?? (message.isHtml ? undefined : message.body)
     };
   }
 

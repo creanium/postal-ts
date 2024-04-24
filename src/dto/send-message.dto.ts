@@ -9,11 +9,11 @@ interface SendMessageDtoBase {
 }
 
 interface SendPlainMessageDto extends SendMessageDtoBase {
-  plain_body: string;
+  plain_body?: string;
 }
 
 interface SendHtmlMessageDto extends SendMessageDtoBase {
-  html_body: string;
+  html_body?: string;
 }
 
 export type SendMessageDto = SendPlainMessageDto | SendHtmlMessageDto;
